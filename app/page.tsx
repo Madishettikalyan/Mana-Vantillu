@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   Home, Utensils, ShoppingCart, User, Search, 
   Leaf, Sparkles, Truck, Star, ArrowRight, 
@@ -90,12 +90,31 @@ export default function ManaVantillu() {
     setTimeout(() => setToastMessage(''), 3000);
   };
 
+  useEffect(() => {
+    const handlePopState = (event: PopStateEvent) => {
+      if (event.state) {
+        setCurrentView(event.state.view);
+        if (event.state.category) {
+          setActiveCategory(event.state.category);
+        }
+      } else {
+        setCurrentView('home');
+      }
+    };
+    
+    window.history.replaceState({ view: 'home', category: 'all' }, '');
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
   const navigateTo = (view: string, category: string = 'all') => {
     setCurrentView(view);
     if (view === 'menu') {
       setActiveCategory(category);
       setSearchQuery('');
     }
+    
+    window.history.pushState({ view, category }, '');
     // Scroll to top smoothly
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
