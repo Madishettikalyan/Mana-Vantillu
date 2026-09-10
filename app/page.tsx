@@ -251,19 +251,6 @@ export default function ManaVantillu() {
           </div>
         </div>
 
-        {/* Mobile Search Bar */}
-        <div className="md:hidden px-4 pb-4">
-          <div className="relative w-full">
-            <input 
-              type="text" 
-              placeholder="Search food..." 
-              value={searchQuery}
-              onChange={handleSearch}
-              className="w-full pl-10 pr-4 py-2 border border-amber-200 rounded-full bg-white/90 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary text-dark font-medium shadow-sm"
-            />
-            <Search className="absolute left-3 top-2.5 text-primary/70" size={18} />
-          </div>
-        </div>
 
         {/* Mobile Bottom Nav */}
         <div className="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex justify-around py-3 z-50">
@@ -307,6 +294,19 @@ export default function ManaVantillu() {
                     <button onClick={() => navigateTo('menu')} className="bg-primary hover:bg-amber-800 text-white px-8 py-4 rounded-full font-bold transition shadow-lg text-lg flex items-center">Order Now <ArrowRight size={20} className="ml-2"/></button>
                     <button onClick={() => navigateTo('menu', 'all')} className="bg-white hover:bg-gray-50 text-dark border-2 border-amber-200 px-8 py-4 rounded-full font-bold transition shadow-sm text-lg text-center">Explore Menu</button>
                   </div>
+                  
+                  {/* Mobile Search Bar in Hero */}
+                  <div className="md:hidden w-full mb-8 relative">
+                    <input 
+                      type="text" 
+                      placeholder="Search for food..." 
+                      value={searchQuery}
+                      onChange={handleSearch}
+                      className="w-full pl-12 pr-4 py-3.5 border-2 border-amber-200 rounded-full bg-white shadow-md focus:outline-none focus:ring-2 focus:ring-primary text-dark font-bold text-lg"
+                    />
+                    <Search className="absolute left-4 top-4 text-primary" size={24} />
+                  </div>
+
                   <div className="flex flex-wrap gap-4 items-center text-sm text-gray-700 font-bold">
                     <span className="flex items-center"><Leaf className="text-accent mr-2" size={18}/> Freshly Prepared</span>
                     <span className="flex items-center"><Sparkles className="text-accent mr-2" size={18}/> Hygienic</span>
@@ -477,6 +477,20 @@ export default function ManaVantillu() {
         {currentView === 'menu' && (
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 animate-in fade-in duration-300">
             
+            {/* Mobile Search Bar inside Menu */}
+            <div className="md:hidden mb-8">
+              <div className="relative w-full">
+                <input 
+                  type="text" 
+                  placeholder="Search our delicious menu..." 
+                  value={searchQuery}
+                  onChange={handleSearch}
+                  className="w-full pl-10 pr-4 py-3 border border-amber-200 rounded-full bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary text-dark font-medium"
+                />
+                <Search className="absolute left-4 top-3 text-primary/70" size={20} />
+              </div>
+            </div>
+
             <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-6">
               <h1 className="text-4xl font-bold font-serif text-dark md:mb-0">Our Menu</h1>
               
@@ -865,7 +879,7 @@ export default function ManaVantillu() {
         href="https://wa.me/918179157002" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="fixed bottom-24 md:bottom-10 left-4 md:left-auto md:right-10 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl flex items-center justify-center z-50 hover:scale-110 transition-transform duration-300 ring-4 ring-green-100"
+        className="fixed bottom-24 md:bottom-10 right-4 md:right-10 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl flex items-center justify-center z-50 hover:scale-110 transition-transform duration-300 ring-4 ring-green-100"
         title="Chat with us on WhatsApp"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
