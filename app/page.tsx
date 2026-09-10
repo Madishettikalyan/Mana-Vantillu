@@ -208,7 +208,7 @@ export default function ManaVantillu() {
               </div>
               <div className="flex flex-col justify-center">
                 <span className="font-serif font-bold text-lg sm:text-xl md:text-2xl text-dark tracking-tight leading-none group-hover:text-primary transition-colors whitespace-nowrap">Mana Vantillu</span>
-                <span className="text-[10px] text-primary font-bold uppercase tracking-widest mt-1 hidden md:block">Taste of Home</span>
+                <span className="text-[10px] sm:text-xs text-primary font-bold uppercase tracking-widest mt-0.5 sm:mt-1">Taste of Home</span>
               </div>
             </div>
             
