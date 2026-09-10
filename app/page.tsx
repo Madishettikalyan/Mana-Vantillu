@@ -251,6 +251,19 @@ export default function ManaVantillu() {
           </div>
         </div>
 
+        {/* Mobile Search Bar in Header */}
+        <div className="md:hidden px-4 pb-4">
+          <div className="relative w-full">
+            <input 
+              type="text" 
+              placeholder="Search food..." 
+              value={searchQuery}
+              onChange={handleSearch}
+              className="w-full pl-10 pr-4 py-2 border border-amber-200 rounded-full bg-white/90 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary text-dark font-medium shadow-sm"
+            />
+            <Search className="absolute left-3 top-2.5 text-primary/70" size={18} />
+          </div>
+        </div>
 
         {/* Mobile Bottom Nav */}
         <div className="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex justify-around py-3 z-50">
@@ -275,7 +288,7 @@ export default function ManaVantillu() {
       </nav>
 
       {/* Main Content */}
-      <main className="pt-32 md:pt-28 lg:pt-24">
+      <main className="pt-40 md:pt-28 lg:pt-24">
         
         {currentView === 'home' && (
           <div className="animate-in fade-in duration-500">
