@@ -202,13 +202,13 @@ export default function ManaVantillu() {
           <div className="flex justify-between h-20 items-center">
             
             {/* Logo */}
-            <div className="flex-shrink-0 flex items-center cursor-pointer group" onClick={() => navigateTo('home')}>
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-amber-700 text-white rounded-full flex items-center justify-center mr-3 shadow-md group-hover:scale-105 transition-transform">
-                <Utensils size={20} />
+            <div className="flex-shrink-0 flex items-center cursor-pointer group mr-2" onClick={() => navigateTo('home')}>
+              <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-primary to-amber-700 text-white rounded-full flex items-center justify-center mr-2 shadow-md group-hover:scale-105 transition-transform">
+                <Utensils className="w-4 h-4 md:w-5 md:h-5" />
               </div>
               <div className="flex flex-col justify-center">
-                <span className="font-serif font-bold text-2xl text-dark tracking-tight leading-none group-hover:text-primary transition-colors">Mana Vantillu</span>
-                <span className="text-[10px] text-primary font-bold uppercase tracking-widest mt-1 hidden sm:block">Taste of Home</span>
+                <span className="font-serif font-bold text-lg sm:text-xl md:text-2xl text-dark tracking-tight leading-none group-hover:text-primary transition-colors whitespace-nowrap">Mana Vantillu</span>
+                <span className="text-[10px] text-primary font-bold uppercase tracking-widest mt-1 hidden md:block">Taste of Home</span>
               </div>
             </div>
             
@@ -223,18 +223,18 @@ export default function ManaVantillu() {
             </div>
             
             {/* Search and Cart */}
-            <div className="flex items-center space-x-2 md:space-x-4 flex-1 md:flex-none justify-end ml-4 md:ml-0">
+            <div className="flex items-center space-x-2 md:space-x-4 justify-end flex-shrink min-w-0">
               
               {/* Search Bar */}
-              <div className="flex relative items-center w-full md:w-auto md:max-w-none">
+              <div className="flex relative items-center w-28 sm:w-36 md:w-auto">
                 <input 
                   type="text" 
-                  placeholder="Search food..." 
+                  placeholder="Search..." 
                   value={searchQuery}
                   onChange={handleSearch}
-                  className="w-full pl-9 pr-3 py-1.5 md:w-40 lg:w-48 border border-amber-200 rounded-full bg-white/70 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary text-dark text-sm font-medium transition-all shadow-inner md:shadow-none"
+                  className="w-full pl-8 pr-3 py-1.5 md:w-40 lg:w-48 border border-amber-200 rounded-full bg-white/70 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary text-dark text-xs md:text-sm font-medium transition-all shadow-inner md:shadow-none"
                 />
-                <Search className="absolute left-3 text-primary/70" size={16} />
+                <Search className="absolute left-2.5 text-primary/70 w-3.5 h-3.5 md:w-4 md:h-4" />
               </div>
               
               <button onClick={() => navigateTo('cart')} className="hidden md:block relative text-dark hover:text-primary bg-amber-100/50 p-2.5 rounded-full transition-colors">
