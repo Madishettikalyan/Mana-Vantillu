@@ -197,7 +197,7 @@ export default function ManaVantillu() {
     <div className="min-h-screen pb-20 md:pb-0 font-sans">
       
       {/* Navigation */}
-      <nav className="fixed w-full z-50 glass-nav border-b border-amber-200 transition-all duration-300">
+      <nav className="fixed top-0 left-0 w-full z-50 glass-nav border-b border-amber-200 transition-all duration-300">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-20 items-center">
             
@@ -223,19 +223,24 @@ export default function ManaVantillu() {
             </div>
             
             {/* Search and Cart */}
-            <div className="flex items-center space-x-2 md:space-x-4 justify-end flex-shrink min-w-0">
+            <div className="flex items-center space-x-3 md:space-x-4 justify-end">
               
-              {/* Search Bar */}
-              <div className="flex relative items-center w-28 sm:w-36 md:w-auto">
+              {/* Desktop Search Bar */}
+              <div className="hidden md:flex relative items-center w-40 lg:w-48">
                 <input 
                   type="text" 
-                  placeholder="Search..." 
+                  placeholder="Search food..." 
                   value={searchQuery}
                   onChange={handleSearch}
-                  className="w-full pl-8 pr-3 py-1.5 md:w-40 lg:w-48 border border-amber-200 rounded-full bg-white/70 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary text-dark text-xs md:text-sm font-medium transition-all shadow-inner md:shadow-none"
+                  className="w-full pl-9 pr-3 py-1.5 border border-amber-200 rounded-full bg-white/70 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary text-dark text-sm font-medium transition-all"
                 />
-                <Search className="absolute left-2.5 text-primary/70 w-3.5 h-3.5 md:w-4 md:h-4" />
+                <Search className="absolute left-3 text-primary/70" size={16} />
               </div>
+
+              {/* Mobile Search Icon */}
+              <button onClick={() => { navigateTo('menu', 'all'); setTimeout(() => window.scrollTo({top: 0, behavior: 'smooth'}), 100); }} className="md:hidden relative text-dark hover:text-primary bg-amber-100/50 p-2.5 rounded-full transition-colors">
+                <Search size={20} />
+              </button>
               
               <button onClick={() => navigateTo('cart')} className="hidden md:block relative text-dark hover:text-primary bg-amber-100/50 p-2.5 rounded-full transition-colors">
                 <ShoppingCart size={20} />
